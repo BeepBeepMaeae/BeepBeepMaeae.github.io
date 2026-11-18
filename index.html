@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Unity Gameplay Programmer 이천서의 프로젝트와 개발 경험">
+<title>이천서 | Gameplay Programmer</title>
+<style>
+  :root{color-scheme:dark;--bg:#151310;--surface:#211c17;--line:#574637;--text:#faf0df;--muted:#cebdab;--accent:#ffc580;--red:#9d382d}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font:1rem/1.75 "Malgun Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+  a{color:var(--accent);text-underline-offset:.23em}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+  .wrap{width:min(1080px,calc(100% - 48px));margin-inline:auto}
+  header .wrap,footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:20px}
+  header,footer{border-block-end:1px solid var(--line)}
+  footer{border-block:1px solid var(--line) 0;color:var(--muted)}
+  nav,.links{display:flex;gap:12px 22px;flex-wrap:wrap;align-items:center}
+  .identity{font-weight:750}.identity small{display:block;color:var(--muted);font-weight:400}
+  .hero{background:radial-gradient(ellipse at 83% 45%,#58271d 0%,transparent 53%),var(--surface);border-bottom:1px solid var(--line)}
+  .hero .wrap{padding-block:clamp(32px,5vw,64px)}
+  .eyebrow{margin:0;color:var(--accent);font-weight:700;font-size:.86rem;letter-spacing:.055em}
+  h1,h2,h3,p{margin-top:0}
+  h1{font:700 clamp(2.8rem,8.1vw,6.7rem)/1 Georgia,"Times New Roman",serif;letter-spacing:-.075em;margin:.16em 0}
+  h2{font-size:clamp(1.65rem,3.4vw,2.65rem);line-height:1.35;letter-spacing:-.035em;margin:.24em 0 .6em}
+  h3{font-size:1.05rem;margin-bottom:.33em}
+  p{margin-bottom:1em}.lead{max-width:42ch;color:var(--muted);font-size:1.06rem}
+  .links{margin-top:24px}.button{display:inline-block;padding:9px 16px;border:1px solid var(--line);border-radius:5px;color:var(--text);text-decoration:none;font-weight:700}
+  .button:hover{border-color:var(--accent)}.primary{background:var(--accent);border-color:var(--accent);color:#27170e}
+  .game-title{display:block;width:min(100%,390px);margin:-1.4rem 0 -.65rem}
+  .game-title img{display:block;width:100%;height:auto}
+  .game-shot{margin:0;min-width:0}
+  .game-shot a{display:block;aspect-ratio:16 / 9;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:#100e0b}
+  .game-shot img{display:block;width:100%;height:100%;object-fit:contain}
+  .game-shot figcaption{margin-top:8px;color:var(--muted);font-size:.88rem}
+  .hero .game-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding-top:0}
+  section.content{padding-block:clamp(42px,6vw,74px);border-bottom:1px solid var(--line)}
+  .fact-grid,.steps{display:grid;gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}
+  .panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:20px}
+  .panel p{color:var(--muted);margin:0}
+  .case-intro{max-width:72ch;color:var(--muted)}
+  .steps{padding:0;list-style-position:inside;margin:22px 0 0}
+  .steps li::marker{color:var(--accent);font-weight:700}
+  .steps h3{display:inline}
+  .steps p{margin-top:7px}
+  .intro{padding-block:clamp(48px,8vw,94px);border-bottom:1px solid var(--line)}
+  .intro h1{font:750 clamp(2.45rem,6vw,4.65rem)/1.14 system-ui,sans-serif;letter-spacing:-.055em;margin:.12em 0 .45em}
+  .intro .lead{max-width:68ch}
+  .credentials{color:var(--accent);margin-bottom:0}
+  .section-title{padding-top:42px}
+  .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+  .project-grid h3{font-size:1.23rem}
+  .label{display:block;color:var(--accent);font-size:.82rem;margin-bottom:8px}
+  .panel .meta{font-size:.88rem;margin-top:12px}
+  .panel .links{margin-top:12px;font-size:.92rem}
+  .history{margin:0;padding:0;list-style:none}
+  .history li{display:grid;grid-template-columns:7.5rem 1fr;gap:12px;padding-block:11px;border-bottom:1px solid var(--line)}
+  .history time{color:var(--muted)}
+  @media(max-width:700px){.project-grid{grid-template-columns:1fr}.history li{grid-template-columns:1fr;gap:2px}}
+  @media(max-width:700px){.wrap{width:calc(100% - 32px)}.hero .game-gallery,.fact-grid,.steps{grid-template-columns:1fr}}
+</style>
+<header>
+  <div class="wrap">
+    <div class="identity">이천서 <small>BeepBeepMaeae · Unity Gameplay Programmer</small></div>
+    <nav aria-label="바로가기">
+      <a href="#projects">프로젝트</a>
+      <a href="#experience">수상·경험</a>
+      <a href="https://github.com/BeepBeepMaeae">GitHub</a>
+      <a href="https://app.notion.com/p/Gameplay-Programmer-3d3023a4696681f5b5a7fc181086f45b">Notion</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="intro wrap" aria-labelledby="about">
+    <p class="eyebrow">Unity Gameplay Programmer</p>
+    <h1 id="about">이천서</h1>
+    <p class="lead">게임 규칙과 멀티플레이 흐름을 구현하고 테스트와 측정으로 결과를 확인합니다. Unity·C#으로 게임플레이를 개발하고, Photon PUN/Fusion 기반 멀티플레이와 성능 분석에 관심이 있습니다.</p>
+    <p class="credentials">2026 넥슨 메커톤 우수상 · NAN 2026 챌린지상 · Unity ECS 논문 공동저자</p>
+  </section>
+  <div class="wrap section-title"><h2 id="projects">대표 프로젝트</h2></div>
+  <section class="hero" aria-labelledby="project">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">팀장 · 기획 · 개발</p>
+        <h3 id="project" class="game-title"><img src="assets/diablackjack-title.png" width="512" height="256" alt="DiaBlackJack (데블랙잭)"></h3>
+        <p class="lead">블랙잭에 무기와 악마의 계약을 더한 덱 빌딩 로그라이트입니다. 전투에서 얻은 보상으로 덱을 바꾸고 다음 상대에게 도전합니다.</p>
+        <div class="links">
+          <a class="button primary" href="#case">구현 사례 보기</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap project-grid game-gallery" aria-label="데블랙잭 플레이 화면">
+      <figure class="game-shot">
+        <a href="assets/gameplay-2.jpg"><img src="assets/gameplay-2.jpg" width="1918" height="1078" alt="카드를 펼쳐 놓고 총잡이와 대결하는 데블랙잭 전투 화면"></a>
+        <figcaption>총잡이 전투</figcaption>
+      </figure>
+      <figure class="game-shot">
+        <a href="assets/gameplay-1.jpg"><img src="assets/gameplay-1.jpg" width="1917" height="1080" loading="lazy" alt="전투와 상점 경로가 갈라지는 데블랙잭 지도"></a>
+        <figcaption>경로 선택</figcaption>
+      </figure>
+      <figure class="game-shot">
+        <a href="assets/gameplay-3.jpg"><img src="assets/gameplay-3.jpg" width="1916" height="1076" loading="lazy" alt="상점에서 카드를 태워 덱에서 제거하는 화면"></a>
+        <figcaption>상점에서 카드 제거</figcaption>
+      </figure>
+    </div>
+  </section>
+  <section class="content wrap" aria-labelledby="contribution">
+    <h2 id="contribution">데블랙잭에서 맡은 일</h2>
+    <div class="fact-grid">
+      <div class="panel"><h3>역할</h3><p>팀장으로 전체 게임 규칙을 기획하고 우선순위를 정했습니다. 전투 코어, 적 행동, 런 진행을 구현하고 검증했습니다.</p></div>
+      <div class="panel"><h3>기술</h3><p>Unity와 C#을 사용했습니다. 구현과 회귀 테스트 작성에 생성형 AI를 활용하고, 변경 사항을 게임 규칙과 대조해 검토했습니다.</p></div>
+      <div class="panel"><h3>결과</h3><p>NAN 2026 본선 진출 · 상위 10팀 선정.</p></div>
+    </div>
+  </section>
+  <section class="content wrap" id="case" aria-labelledby="case-title">
+    <p class="eyebrow">구현 사례</p>
+    <h2 id="case-title">상대는 내 숨은 패를 어떻게 모를까?</h2>
+    <p class="case-intro">적마다 다른 전략을 쓰게 하면서도, 플레이어가 숨긴 카드와 덱 순서를 적이 읽지 못하게 해야 했습니다. 적의 판단에 필요한 정보만 담는 관측 모델을 만들어 전투 상태와 분리했습니다.</p>
+    <ol class="steps">
+      <li class="panel"><h3>관측</h3><p>공개 카드, 적 자신의 상태, 행동 가능 여부만 적에게 전달합니다.</p></li>
+      <li class="panel"><h3>판단</h3><p>가능한 행동 후보 중에서 적의 성향과 현재 관측에 맞는 행동을 고릅니다.</p></li>
+      <li class="panel"><h3>실행</h3><p>행동의 소유권, 대상, 실행 조건을 다시 확인합니다. 조건을 충족하지 못하면 전투 상태를 그대로 둡니다.</p></li>
+    </ol>
+    <div class="links"><a href="https://app.notion.com/p/DiaBlackJack-3d3023a46966814aa5b7e8601f660e51">노션에서 구현 상세 보기</a></div>
+  </section>
+  <section class="content wrap" aria-label="그 밖의 대표 프로젝트">
+    <div class="project-grid">
+      <article class="panel"><span class="label">2026 메커톤 우수상</span><h3>가짜 메이플러를 찾아라!</h3><p>역할에 따라 목표가 달라지는 온라인 숨바꼭질 게임입니다. 라운드, 역할, 미션과 세션 흐름을 구현했습니다.</p><p class="meta">MapleStory Worlds · MLua · 팀 프로젝트</p><div class="links"><a href="https://app.notion.com/p/3d3023a469668113a528dc10ee173e85">프로젝트 상세</a></div></article>
+      <article class="panel"><span class="label">성능 연구 · KCI 학술지 게재</span><h3>Unity ECS 렌더링 성능 연구</h3><p>대규모 인스턴스를 렌더링하는 방식을 비교했습니다. GPU 스키닝과 원거리 유닛을 구현하고 240회 비교 실험의 실행·기록에 참여했습니다.</p><p class="meta">Unity ECS · RMI · BRG · 3인 공동 연구</p><div class="links"><a href="https://app.notion.com/p/Unity-ECS-3d3023a469668154b0fbc3f053c95086">연구 상세</a></div></article>
+      <article class="panel"><span class="label">성능 분석</span><h3>Maggi</h3><p>3D 퍼즐 공포 게임에서 반복 할당의 원인을 추적하고, 최적화 전후를 Profiler로 다시 측정했습니다.</p><p class="meta">Unity · C# · Profiler · Project Auditor</p><div class="links"><a href="https://app.notion.com/p/Maggi-3d3023a46966815283d4e74007f1e944">분석 상세</a></div></article>
+      <article class="panel"><span class="label">개인 프로젝트</span><h3>WordWar</h3><p>2인 온라인 단어 추리 배틀 게임입니다. 네트워크 상태 흐름과 RPC, 예외 처리를 구현하고 경계 상황을 50개 이상 수동으로 검증했습니다.</p><p class="meta">Unity · Photon PUN · RPC</p><div class="links"><a href="https://app.notion.com/p/WordWar-3d3023a469668136b964f0be28dfad16">프로젝트 상세</a><a href="https://github.com/BeepBeepMaeae/WordWar">소스 코드</a></div></article>
+    </div>
+  </section>
+  <section class="content wrap" aria-labelledby="ongoing">
+    <h2 id="ongoing">현재 진행 중인 프로젝트</h2>
+    <div class="project-grid">
+      <article class="panel"><h3>메아리</h3><p>Photon Fusion 기반 라운드형 PvPvE 게임입니다. 세션·입력·스폰, 전투와 스킬을 개발하고 있습니다.</p><p class="meta">Photon Fusion · 멀티플레이</p></article>
+      <article class="panel"><h3>Avocado Survivors</h3><p>8인 팀에서 시너지 UI, 점수·통계, 적 체력 UI와 기능 통합을 맡았습니다. 스킬별 피해량과 DPS를 전투 결과에 연결했습니다.</p><div class="links"><a href="https://teamavo.itch.io/avocado-survivors">itch.io에서 보기</a></div></article>
+    </div>
+  </section>
+  <section class="content wrap" id="experience" aria-labelledby="experience-title">
+    <h2 id="experience-title">수상과 경험</h2>
+    <h3>수상</h3>
+    <ul class="history">
+      <li><time datetime="2026-09">2026.09</time><span>NAN 2026 챌린지상 · Artemis: 2026</span></li>
+      <li><time datetime="2026-07">2026.07</time><span>넥슨 메커톤 우수상 · 가짜 메이플러를 찾아라!</span></li>
+      <li><time datetime="2025-12">2025.12</time><span>Deep Dive 게임잼 동서대 미디어컨텐츠대학장상 · Cook for Daring</span></li>
+      <li><time datetime="2018-08">2018.08</time><span>제3회 부산 ICT 융합 해커톤 고등부 최우수상</span></li>
+    </ul>
+    <div class="links"><a href="https://app.notion.com/p/Gameplay-Programmer-3d3023a4696681f5b5a7fc181086f45b">개발 경험과 멘토링 활동 더 보기</a></div>
+  </section>
+</main>
+<footer><div class="wrap"><span>이천서 · BeepBeepMaeae</span><a href="https://github.com/BeepBeepMaeae">GitHub 프로필</a></div></footer>
+</html>
